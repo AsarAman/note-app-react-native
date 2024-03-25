@@ -193,12 +193,14 @@ const AppProvider = ({ children }: PropsWithChildren) => {
       const msg = data.msg;
       const searchString = "than the minimum allowed length (8)";
       const nameSearchString = "Path `name`";
+      setLoading(false)
 
       if (msg && msg === "email field has to be unique") {
         Toast.show({
           type: "error",
           text1: "This email already exists!",
         });
+        
 
         return;
       } else if (msg && msg === "please provide valid email") {

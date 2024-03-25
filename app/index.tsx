@@ -7,7 +7,7 @@ import Colors from "@/constants/Colors";
 
 const Page = () => {
   const { user,loading } = useData();
-  console.log(loading, 'loading')
+  
 
   useEffect(() => {
     if (user) {

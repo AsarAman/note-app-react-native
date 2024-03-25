@@ -8,7 +8,7 @@ import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
-import { ToastProvider } from "react-native-toast-notifications";
+
 import Toast from "react-native-toast-message";
 import { useData } from "./context/Context";
 

@@ -8,6 +8,7 @@ import {
   TextInput,
   ScrollView,
   TouchableOpacity,
+  ActivityIndicator
   
 } from "react-native";
 import { useData } from "../context/Context";
@@ -16,11 +17,11 @@ import { Ionicons } from "@expo/vector-icons";
 
 import * as ImagePicker from "expo-image-picker";
 import { useState } from "react";
-import { Link, router, useNavigation } from "expo-router";
+import { Link, useNavigation } from "expo-router";
 import Toast from "react-native-toast-message";
 
 function Profile() {
-  const { user, updateUser, logOutUser, setLoading } = useData();
+  const { user, updateUser, logOutUser, setLoading, loading } = useData();
   const [image, setImage] = useState<string | null>(user?.profile || null);
   const [name, setName] = useState<string>(user?.name || "");
   const [email, setEmail] = useState<string>(user?.email || "");
@@ -78,6 +79,17 @@ function Profile() {
         color={Colors.light.colorPink}
         onPress={() => navigation.goBack()}
       />
+       {loading && (
+        <ActivityIndicator
+          size={50}
+          color={Colors.light.colorPink}
+          style={{
+            alignItems: "center",
+            justifyContent: "center",
+            marginVertical: 15,
+          }}
+        />
+      )}
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={styles.profileSection}

@@ -1,5 +1,5 @@
 import {
-  SafeAreaView,
+  
   StyleSheet,
   Text,
   View,
@@ -24,14 +24,14 @@ import { Entypo } from "@expo/vector-icons";
 import { useLocalSearchParams, useNavigation } from "expo-router";
 import Toast from "react-native-toast-message";
 import { Ionicons } from "@expo/vector-icons";
-import ModalCom from "@/components/Modal";
+
 
 type NoteObject = {
   title: string;
   description: string;
   category: string;
   dueDate: Date;
-  image?: string; // Make image property optional
+  image?: string; 
 };
 
 const Create = ({}) => {

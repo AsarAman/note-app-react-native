@@ -3,16 +3,16 @@ import React, { useLayoutEffect, useEffect } from "react";
 import { useNavigation, router} from "expo-router";
 
 import InputForm from "@/components/Form";
-import { View, StyleSheet, Image } from "react-native";
+import { View, StyleSheet} from "react-native";
 import { useData } from "./context/Context";
-import { useIsFocused } from "@react-navigation/native";
+
 
 const Login = () => {
-  const focused = useIsFocused()
-  console.log(focused, 'from login')
+  
+  
   const navigation = useNavigation();
-  const {user,loading, setLoading} = useData()
-  console.log(loading, 'loading')
+  const {user} = useData()
+  
 
   
   
